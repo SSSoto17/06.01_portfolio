@@ -1,0 +1,11 @@
+:root {
+  /* FONTS */
+  --display-font: "playfair display", serif;
+  --title-font: "oxygen", sans-serif;
+  --body-font: "karla", sans-serif;
+
+  /* COLOURS */
+  --bg-color: #ede9e8;
+  --accent-color: #604d53;
+  --text-color: #373536;
+}
