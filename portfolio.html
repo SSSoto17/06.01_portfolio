@@ -70,44 +70,62 @@
             </ul>
         </aside>
         <div id="portfolio_container">
-            <div class="web active">
-                <div class="grid_2-1">
-                    <div class="container grid_2-3">
-                        <img src="img/02_web/frontpage.PNG" alt="">
-                        <div>
-                            <h1>Basic Web</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque reiciendis sed illum
-                                harum cupiditate maxime rem, ad magnam cumque quibusdam ratione! Autem incidunt aperiam
-                                temporibus tempora sint velit maiores quisquam.</p>
-                            <a href="http://worldofsoto.dk/kea/02_web/01_website/website/" class="btn">Go to site <i
-                                    class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <h2>Process</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="ui">
-                <h1>UI/UX</h1>
-            </div>
-            <div class="animation">
+            <button class="carousel__button carousel__button--prev">
+                <i class="fa-solid fa-chevron-left fa-fw"></i>
+            </button>
+            <section class="web">
                 <ul class="flex_pages">
                     <li>
-                        <h1>Animation</h1>
-                        <p>Next up was our animation course, which saw us learning javascript through the process of
-                            designing and coding our own game. This was a fun endeavour, in which I personally had great
-                            enjoyment designing the game mechanics, graphics, and final website.</p>
-                        <img src="img/04_ani/website.PNG" alt="">
-                        <p>I was excited for this project as I had based the game mechanics on a storyline from a
-                            personal project, a fantasy book series I am writing. As I am a massive fan of video games
-                            and a digital artist in my leisure time, I had fun designing the gameplay to incorporate
-                            story elements of my book and draw the characters in Adobe Photoshop and Illustrator.</p>
-                        <p>In the end my style and colour palette for the background was heavily inspired by the
-                            game Journey, and although the characters were more anime-like in their design I am
-                            satisfied that I still managed to achieve a cohesive visual aesthetic.</p>
-                        <a href="https://worldofsoto.dk/kea/04_animation/website/" class="btn">Go to site <i
+                        <img src="img/02_web/frontpage.PNG" alt="">
+                        <h1>Basic Web</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque reiciendis sed illum
+                            harum cupiditate maxime rem, ad magnam cumque quibusdam ratione! Autem incidunt aperiam
+                            temporibus tempora sint velit maiores quisquam.</p>
+                        <a href="http://worldofsoto.dk/kea/02_web/01_website/website/" class="btn">Go to site <i
                                 class="fa-solid fa-arrow-right"></i></a>
+                        <h2>Process</h2>
+                    </li>
+                    <li></li>
+                </ul>
+            </section>
+            <section class="ui">
+                <h1>UI/UX</h1>
+            </section>
+            <section class="animation">
+                <ul class="flex_pages">
+                    <li>
+                        <div class="grid_3-2">
+                            <div>
+                                <h1>Animation</h1>
+                                <p>Next up was our animation course, which saw us learning javascript through the
+                                    process of
+                                    designing and coding our own game. This was a fun endeavour, in which I personally
+                                    had
+                                    great
+                                    enjoyment designing the game mechanics, graphics, and final website.</p>
+                            </div>
+                            <a href="https://worldofsoto.dk/kea/04_animation/website/" class="btn">Go to site <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                            <div id="ani_svg">
+                                <div class="rectangle"></div>
+                                <img src="svg/element_life.svg" id="svg_life" alt="">
+                                <img src="svg/element_cultist.svg" id="svg_cultist" alt="">
+                                <img src="svg/aedan.svg" id="svg_assassin" alt="">
+                            </div>
+                        </div>
+                        <div>
+                            <img src="img/04_ani/website.PNG" alt="" id="screenshot_ani_website" class="img_deco_2">
+                            <p>I was excited for this project as I had based the game mechanics on a storyline from a
+                                personal project, a fantasy book series I am writing. As I am a massive fan of video
+                                games
+                                and a digital artist in my leisure time, I had fun designing the gameplay to incorporate
+                                story elements of my book and draw the characters in Adobe Photoshop and Illustrator.
+                            </p>
+                            <p>In the end my style and colour palette for the background was heavily inspired by the
+                                game Journey, and although the characters were more anime-like in their design I am
+                                satisfied that I still managed to achieve a cohesive visual aesthetic.</p>
+
+                        </div>
                     </li>
                     <li>
                         <h3>Concept & Design</h3>
@@ -141,10 +159,13 @@
                             exercises in javascript and creating UML and SM diagrams.</p>
                     </li>
                 </ul>
-            </div>
-            <div class="content">
+            </section>
+            <section class="content">
                 <h1>Content</h1>
-            </div>
+            </section>
+            <button class="carousel__button carousel__button--next">
+                <i class="fa-solid fa-chevron-right fa-fw"></i>
+            </button>
         </div>
     </main>
     <footer>

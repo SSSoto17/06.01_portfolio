@@ -24,6 +24,7 @@ h1 {
   font-size: 2rem;
   font-weight: 300;
   letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
 }
 
 h2 {
@@ -39,6 +40,7 @@ h2 {
 p {
   color: var(--text-color);
   font-family: var(--body-font);
+  font-size: 1.1rem;
   margin-bottom: 0.5rem;
   max-width: 70ch;
 }
@@ -64,6 +66,7 @@ a {
 
 .btn {
   display: inline-block;
+  margin: auto;
   width: 250px;
   background-color: var(--accent-color);
   color: var(--bg-color);
@@ -210,79 +213,33 @@ aside {
 
 /* PORTFOLIO */
 
-#portfolio_container {
-  position: relative;
-  grid-column: 2 / 12 span;
-  grid-row: 2;
+.img_deco_1 {
+  border: white solid 2px;
 }
 
-#portfolio_container > div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* width: 92vw;
-  height: 78vh; */
+.img_deco_2 {
+  padding: 0.5rem;
+  border: var(--accent-color) solid 2px;
 }
-
-.flex_pages {
-  display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 92vw;
-
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-}
-
-.flex_pages li {
-  scroll-snap-align: start;
-  width: 92vw;
-  height: 78vh;
-  flex: 0 0 auto;
-  border-right: black solid 2px;
-  padding: 1rem;
-}
-
-.grid_2-1 {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
-}
-
-.grid_2-3 {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  gap: 2rem;
-}
-
-.container {
-  padding: 2rem 3rem;
-}
-
-/* WEB */
 
 .web {
-  display: none;
+  opacity: 0;
+  transition: 0.5s ease;
 }
-
-/* UI/UX */
 
 .ui {
-  display: none;
+  opacity: 0;
+  transition: 0.5s ease;
 }
-
-/* ANIMATION */
 
 .animation {
-  display: none;
+  opacity: 0;
+  transition: 0.5s ease;
 }
 
-/* CONTENT */
-
 .content {
-  display: none;
+  opacity: 0;
+  transition: 0.5s ease;
 }
 
 /* FOOTER */
@@ -354,9 +311,9 @@ footer p:last-child {
     display: none;
   }
 
-  .active {
+  /* .active {
     display: block;
-  }
+  } */
 
   /* ASIDE */
 
@@ -512,6 +469,141 @@ footer p:last-child {
   /* ABOUT */
 
   /* PORTFOLIO */
+
+  #portfolio_container {
+    position: relative;
+    grid-column: 2 / 12 span;
+    grid-row: 2;
+  }
+
+  #portfolio_container > section {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #portfolio_container .carousel__button {
+    position: absolute;
+    top: 50%;
+    font-size: 2rem;
+    transform: translateY(-50%);
+    z-index: 50;
+    transition: opacity 0.5s ease;
+  }
+
+  #portfolio_container .carousel__button.inactive {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  #portfolio_container .carousel__button--prev {
+    left: 0;
+  }
+
+  #portfolio_container .carousel__button--next {
+    right: 1rem;
+  }
+
+  .flex_pages {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 92vw;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+  }
+
+  .flex_pages li {
+    scroll-snap-align: start;
+    width: 92vw;
+    height: 87vh;
+    flex: 0 0 auto;
+    padding: 0 5rem 0 4rem;
+    overflow-y: hidden;
+  }
+
+  /* PORTFOLIO_WEB */
+
+  .web.active {
+    opacity: 1;
+    transition-delay: 1s;
+  }
+
+  /* PORTFOLIO_UI/UX */
+
+  .ui.active {
+    opacity: 1;
+    transition-delay: 1s;
+  }
+
+  /* PORTFOLIO_ANIMATION */
+
+  .animation.active {
+    opacity: 1;
+    transition-delay: 1s;
+  }
+
+  .animation .flex_pages li {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+  }
+
+  .grid_3-2 {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 2fr 3fr;
+    gap: 0.5rem;
+  }
+
+  #ani_svg {
+    grid-column: 1 / 2 span;
+    grid-row: 2;
+    position: relative;
+  }
+
+  #ani_svg .rectangle {
+    width: 600px;
+    height: 200px;
+    background-color: var(--accent-color);
+    margin: auto;
+    margin-top: 2rem;
+  }
+
+  #svg_assassin {
+    position: absolute;
+    width: 750px;
+    bottom: -2rem;
+    left: -10rem;
+  }
+
+  #svg_cultist {
+    position: absolute;
+    width: 180px;
+    bottom: 0;
+    right: 10rem;
+  }
+
+  #svg_life {
+    position: absolute;
+    width: 180px;
+    right: 5rem;
+    bottom: 12rem;
+    transform: rotate(10deg);
+  }
+
+  #screenshot_ani_website {
+    margin-bottom: 1rem;
+  }
+
+  /* PORTFOLIO_CONTENT */
+
+  .content.active {
+    opacity: 1;
+    transition-delay: 1s;
+  }
 
   /* FOOTER */
 

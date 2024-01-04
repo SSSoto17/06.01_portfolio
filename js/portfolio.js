@@ -1,5 +1,9 @@
 // VARIABLES AND CONSTANTS
 
+const portfolio = document.querySelector("#portfolio_container");
+const prev = portfolio.querySelector(".carousel__button--prev");
+const next = portfolio.querySelector(".carousel__button--next");
+
 const icon_web = document.querySelector(".fa-code");
 const icon_ui = document.querySelector(".fa-pen-nib");
 const icon_ani = document.querySelector(".fa-arrows-rotate");
@@ -10,56 +14,88 @@ const ui = document.querySelector(".ui");
 const ani = document.querySelector(".animation");
 const con = document.querySelector(".content");
 
+let activeTab;
+let pages;
+let currentPage;
+
+function resetClass() {
+  web.classList.remove("active");
+  ui.classList.remove("active");
+  ani.classList.remove("active");
+  con.classList.remove("active");
+}
+
+function resetPage() {
+  currentPage = 0;
+  pages = activeTab.querySelectorAll(".flex_pages li");
+  prev.classList.add("inactive");
+  if (pages.length > 0) {
+    next.classList.remove("inactive");
+    pages[currentPage].scrollIntoView();
+  } else {
+    next.classList.add("inactive");
+  }
+}
+
+// load in portfolio
+
+window.addEventListener("load", () => {
+  resetClass();
+  web.classList.add("active");
+  activeTab = web;
+  resetPage();
+});
+
+next.addEventListener("click", () => {
+  currentPage++;
+  if (currentPage > 0) {
+    prev.classList.remove("inactive");
+  }
+  if (currentPage == pages.length - 1) {
+    next.classList.add("inactive");
+  }
+  pages[currentPage].scrollIntoView();
+});
+
+prev.addEventListener("click", () => {
+  console.log(currentPage);
+  currentPage--;
+  console.log(currentPage);
+  if (currentPage >= 0) {
+    next.classList.remove("inactive");
+  }
+  if (currentPage == 0) {
+    prev.classList.add("inactive");
+  }
+  pages[currentPage].scrollIntoView();
+});
+
 // click on icons
 
 icon_web.addEventListener("click", () => {
-  console.log("Web");
-
-  //   clear all
-  web.classList.remove("active");
-  ui.classList.remove("active");
-  ani.classList.remove("active");
-  con.classList.remove("active");
-
-  //   display web
+  resetClass();
   web.classList.add("active");
+  activeTab = web;
+  resetPage();
 });
 
 icon_ui.addEventListener("click", () => {
-  console.log("UI");
-
-  //   clear all
-  web.classList.remove("active");
-  ui.classList.remove("active");
-  ani.classList.remove("active");
-  con.classList.remove("active");
-
-  //   display ui
+  resetClass();
   ui.classList.add("active");
+  activeTab = ui;
+  resetPage();
 });
 
 icon_ani.addEventListener("click", () => {
-  console.log("Animation");
-
-  //   clear all
-  web.classList.remove("active");
-  ui.classList.remove("active");
-  ani.classList.remove("active");
-  con.classList.remove("active");
-
-  //   display animation
+  resetClass();
   ani.classList.add("active");
+  activeTab = ani;
+  resetPage();
 });
 
 icon_con.addEventListener("click", () => {
-  console.log("Content");
-
-  //   clear all
-  web.classList.remove("active");
-  ui.classList.remove("active");
-  ani.classList.remove("active");
-  con.classList.remove("active");
-
-  //   display animation
+  resetClass();
   con.classList.add("active");
+  activeTab = con;
+  resetPage();
 });
