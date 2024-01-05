@@ -24,30 +24,44 @@ h1 {
   font-size: 2rem;
   font-weight: 300;
   letter-spacing: 0.1rem;
-  margin-bottom: 1rem;
+}
+
+h2,
+h3 {
+  font-family: var(--title-font);
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.75rem;
 }
 
 h2 {
   color: var(--text-color);
-  font-family: var(--title-font);
+
   font-size: 1.1rem;
   text-transform: uppercase;
   font-weight: 200;
-  letter-spacing: 0.1rem;
-  margin-bottom: 0.75rem;
+}
+
+h3 {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 p {
   color: var(--text-color);
   font-family: var(--body-font);
   font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   max-width: 70ch;
 }
 
-p:last-child {
-  margin: 0;
+p.padded {
+  padding: 0 1rem;
 }
+
+/* p:last-child {
+  margin: 0;
+} */
 
 li {
   list-style: none;
@@ -213,30 +227,14 @@ aside {
 
 /* PORTFOLIO */
 
-.img_deco_1 {
-  border: white solid 2px;
-}
-
-.img_deco_2 {
+.img_deco {
   padding: 0.5rem;
   border: var(--accent-color) solid 2px;
 }
 
-.web {
-  opacity: 0;
-  transition: 0.5s ease;
-}
-
-.ui {
-  opacity: 0;
-  transition: 0.5s ease;
-}
-
-.animation {
-  opacity: 0;
-  transition: 0.5s ease;
-}
-
+.web,
+.ui,
+.animation,
 .content {
   opacity: 0;
   transition: 0.5s ease;
@@ -251,11 +249,12 @@ footer {
   backdrop-filter: blur(5px);
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  font-size: 0.7rem;
   text-align: center;
+  z-index: 5;
 }
 
 footer p:last-child {
+  font-size: 0.7rem;
   margin: auto;
 }
 
@@ -468,6 +467,49 @@ footer p:last-child {
 
   /* ABOUT */
 
+  #about_container {
+    position: relative;
+    grid-column: 2 / 12 span;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+    padding: 1rem 4rem;
+  }
+
+  #about_container > div:first-child {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+  }
+
+  #about_container > div:last-child {
+    border-left: var(--accent-color) solid 2px;
+    padding: 1rem;
+  }
+
+  #about_photo {
+    max-width: 300px;
+    max-height: 400px;
+    object-fit: cover;
+    object-position: 0 0;
+    border: var(--accent-color) solid 1px;
+    padding: 1rem;
+  }
+
+  #skills {
+    max-width: 100%;
+    height: 200px;
+    background-color: var(--accent-color);
+    padding: 1rem;
+  }
+
+  #skills h2 {
+    color: var(--bg-color);
+    font-weight: 600;
+    text-align: center;
+  }
+
   /* PORTFOLIO */
 
   #portfolio_container {
@@ -522,41 +564,36 @@ footer p:last-child {
     flex: 0 0 auto;
     padding: 0 5rem 0 4rem;
     overflow-y: hidden;
-  }
-
-  /* PORTFOLIO_WEB */
-
-  .web.active {
-    opacity: 1;
-    transition-delay: 1s;
-  }
-
-  /* PORTFOLIO_UI/UX */
-
-  .ui.active {
-    opacity: 1;
-    transition-delay: 1s;
-  }
-
-  /* PORTFOLIO_ANIMATION */
-
-  .animation.active {
-    opacity: 1;
-    transition-delay: 1s;
-  }
-
-  .animation .flex_pages li {
     display: grid;
     grid-template-columns: 3fr 2fr;
     gap: 2rem;
   }
 
-  .grid_3-2 {
+  .flex_pages li > div:first-child {
     display: grid;
     grid-template-columns: 3fr 2fr;
     grid-template-rows: 2fr 3fr;
     gap: 0.5rem;
   }
+
+  .web.active,
+  .ui.active,
+  .animation.active,
+  .content.active {
+    opacity: 1;
+    transition-delay: 1s;
+    z-index: 1;
+  }
+
+  /* PORTFOLIO_WEB */
+
+  .btn.btn__web {
+    margin-top: 1rem;
+  }
+
+  /* PORTFOLIO_UI/UX */
+
+  /* PORTFOLIO_ANIMATION */
 
   #ani_svg {
     grid-column: 1 / 2 span;
@@ -567,7 +604,7 @@ footer p:last-child {
   #ani_svg .rectangle {
     width: 600px;
     height: 200px;
-    background-color: var(--accent-color);
+    background-image: linear-gradient(to top, transparent, var(--secondary-color));
     margin: auto;
     margin-top: 2rem;
   }
@@ -575,7 +612,7 @@ footer p:last-child {
   #svg_assassin {
     position: absolute;
     width: 750px;
-    bottom: -2rem;
+    bottom: -2.5rem;
     left: -10rem;
   }
 
@@ -595,15 +632,10 @@ footer p:last-child {
   }
 
   #screenshot_ani_website {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 
   /* PORTFOLIO_CONTENT */
-
-  .content.active {
-    opacity: 1;
-    transition-delay: 1s;
-  }
 
   /* FOOTER */
 
