@@ -27,7 +27,8 @@ h1 {
 }
 
 h2,
-h3 {
+h3,
+h4 {
   font-family: var(--title-font);
   letter-spacing: 0.1rem;
   margin-bottom: 0.75rem;
@@ -35,7 +36,6 @@ h3 {
 
 h2 {
   color: var(--text-color);
-
   font-size: 1.1rem;
   text-transform: uppercase;
   font-weight: 200;
@@ -45,6 +45,13 @@ h3 {
   color: var(--accent-color);
   font-size: 1.2rem;
   font-weight: 600;
+}
+
+h4 {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  margin-bottom: 0;
+  font-weight: 700;
 }
 
 p {
@@ -474,22 +481,99 @@ footer p:last-child {
     display: grid;
     grid-template-columns: 3fr 2fr;
     gap: 2rem;
-    padding: 1rem 4rem;
+    padding: 0 4rem;
   }
 
   #about_container > div:first-child {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 250px;
     gap: 1rem;
   }
 
+  #about_container h2 {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  #about_container h3 {
+    font-size: 1.6rem;
+  }
+
+  #about_container .photo {
+    position: relative;
+  }
+
   #about_photo {
-    max-width: 300px;
-    max-height: 400px;
+    max-width: 250px;
+    max-height: 350px;
     object-fit: cover;
     object-position: 0 0;
     border: var(--accent-color) solid 1px;
     padding: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  #about_container .mascot {
+    position: absolute;
+    left: -2rem;
+    bottom: 10rem;
+    max-width: 125px;
+  }
+
+  #about_container .callout a {
+    color: var(--bg-color);
+    font-family: var(--body-font);
+    font-size: 1rem;
+    text-transform: lowercase;
+    letter-spacing: 0;
+    margin-left: 1.5rem;
+  }
+
+  .fa-envelope {
+    color: var(--bg-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #education {
+    margin-top: 2rem;
+  }
+
+  #education li {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  #about_container .separator ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  #about_container .separator li {
+    display: flex;
+    align-items: center;
+    color: var(--bg-color);
+    font-family: var(--body-font);
+    font-size: 1.1rem;
+  }
+
+  #about_container .separator {
+    position: relative;
+  }
+
+  #about_container .separator .callout {
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+  }
+
+  .skill_icon {
+    max-width: 30px;
+    max-height: 30px;
+    margin-right: 1rem;
   }
 
   .separator {
