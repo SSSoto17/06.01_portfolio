@@ -368,6 +368,9 @@ footer p:last-child {
 
   #logo {
     margin: 0 auto;
+    background-image: url(../svg/logo/logo5.svg);
+    aspect-ratio: 764.37 / 816.76;
+    width: 100px;
   }
 
   #logo a {
