@@ -9,7 +9,7 @@ body {
 
 @keyframes fadeIn {
   0% {
-    opacity: 0;
+    opacity: 0.01;
   }
   100% {
     opacity: 1;
@@ -416,6 +416,7 @@ footer p:last-child {
   #logo {
     margin: 0 auto;
     background-image: url(../svg/logo.svg);
+    background-repeat: no-repeat;
     aspect-ratio: 764.37 / 816.76;
     width: 100px;
   }
