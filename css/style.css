@@ -234,6 +234,11 @@ aside {
 
 /* PORTFOLIO */
 
+.separator {
+  border-left: var(--accent-color) solid 4px;
+  padding-left: 1rem;
+}
+
 .border_1 {
   padding: 1rem;
   border: var(--accent-color) solid 3px;
@@ -241,6 +246,33 @@ aside {
 
 .border_2 {
   border: var(--secondary-color) solid 2px;
+}
+
+.callout {
+  background-color: var(--accent-color);
+  max-width: 500px;
+  padding: 1rem 1.5rem;
+}
+
+.callout h2 {
+  font-weight: 600;
+  text-align: center;
+  color: var(--bg-color);
+}
+
+.callout p,
+.callout p:last-child,
+.callout li {
+  font-family: var(--body-font);
+  font-size: 1.1rem;
+  color: var(--bg-color);
+  margin: 0;
+}
+
+.skill_icon {
+  max-width: 30px;
+  max-height: 30px;
+  margin-right: 1rem;
 }
 
 .img_1,
@@ -383,7 +415,7 @@ footer p:last-child {
 
   #logo {
     margin: 0 auto;
-    background-image: url(../svg/logo/logo5.svg);
+    background-image: url(../svg/logo.svg);
     aspect-ratio: 764.37 / 816.76;
     width: 100px;
   }
@@ -493,19 +525,88 @@ footer p:last-child {
   /* ABOUT */
 
   #about_container {
-    position: relative;
-    grid-column: 2 / 12 span;
+    grid-column: 2 / 13;
     grid-row: 2;
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 2rem;
     padding: 0 4rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem 2rem;
   }
 
-  #about_container > div:first-child {
+  #about_container .section__1 {
+    grid-column: 1 / 4;
     display: grid;
     grid-template-columns: 1fr 250px;
     gap: 1rem;
+  }
+
+  #about_container .section__2 {
+    grid-column: 4 / 6;
+    grid-row: 1;
+  }
+
+  #education,
+  #contact {
+    margin-top: 3rem;
+  }
+
+  #education li {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  #about {
+    position: relative;
+  }
+
+  #about img {
+    grid-row: 1;
+    max-width: 250px;
+    max-height: 350px;
+    object-fit: cover;
+  }
+
+  #about_container .mascot {
+    max-width: 125px;
+    position: absolute;
+    left: -2rem;
+    bottom: 10rem;
+  }
+
+  #contact {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  #contact i,
+  #contact a {
+    color: var(--bg-color);
+    font-size: 1rem;
+  }
+
+  #contact i {
+    font-size: 2rem;
+  }
+
+  #contact a {
+    font-family: var(--body-font);
+    text-transform: lowercase;
+    letter-spacing: 0;
+  }
+
+  #about_container #skills ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  #about_container #skills li {
+    display: flex;
+    align-items: center;
   }
 
   #about_container h2 {
@@ -515,106 +616,6 @@ footer p:last-child {
 
   #about_container h3 {
     font-size: 1.6rem;
-  }
-
-  #about_container .photo {
-    position: relative;
-  }
-
-  #about_photo {
-    max-width: 250px;
-    max-height: 350px;
-    object-fit: cover;
-    object-position: 0 0;
-    border: var(--accent-color) solid 1px;
-    padding: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  #about_container .mascot {
-    position: absolute;
-    left: -2rem;
-    bottom: 10rem;
-    max-width: 125px;
-  }
-
-  #about_container .callout a {
-    color: var(--bg-color);
-    font-family: var(--body-font);
-    font-size: 1rem;
-    text-transform: lowercase;
-    letter-spacing: 0;
-    margin-left: 1.5rem;
-  }
-
-  .fa-envelope {
-    color: var(--bg-color);
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  #education {
-    margin-top: 2rem;
-  }
-
-  #education li {
-    display: flex;
-    gap: 0.5rem;
-    font-size: 1.1rem;
-  }
-
-  #about_container .separator ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  #about_container .separator li {
-    display: flex;
-    align-items: center;
-    color: var(--bg-color);
-    font-family: var(--body-font);
-    font-size: 1.1rem;
-  }
-
-  #about_container .separator {
-    position: relative;
-  }
-
-  #about_container .separator .callout {
-    position: absolute;
-    bottom: 1rem;
-    width: 100%;
-  }
-
-  .skill_icon {
-    max-width: 30px;
-    max-height: 30px;
-    margin-right: 1rem;
-  }
-
-  .separator {
-    border-left: var(--accent-color) solid 4px;
-    padding-left: 1rem;
-  }
-
-  .callout {
-    background-color: var(--accent-color);
-    padding: 1rem 1.5rem;
-    max-width: 500px;
-  }
-
-  .callout h2 {
-    font-weight: 600;
-    text-align: center;
-    color: var(--bg-color);
-  }
-
-  .callout p,
-  .callout p:last-child {
-    color: var(--bg-color);
-    margin: 0;
   }
 
   /* PORTFOLIO */
