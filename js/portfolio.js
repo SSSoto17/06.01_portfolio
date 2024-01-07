@@ -19,9 +19,13 @@ let pages;
 let currentPage;
 
 function resetClass() {
+  icon_web.classList.remove("active");
   web.classList.remove("active");
+  icon_ui.classList.remove("active");
   ui.classList.remove("active");
+  icon_ani.classList.remove("active");
   ani.classList.remove("active");
+  icon_con.classList.remove("active");
   con.classList.remove("active");
 }
 
@@ -41,6 +45,7 @@ function resetPage() {
 
 window.addEventListener("load", () => {
   resetClass();
+  icon_web.classList.add("active");
   web.classList.add("active");
   activeTab = web;
   resetPage();
@@ -74,6 +79,7 @@ prev.addEventListener("click", () => {
 
 icon_web.addEventListener("click", () => {
   resetClass();
+  icon_web.classList.add("active");
   web.classList.add("active");
   activeTab = web;
   resetPage();
@@ -81,6 +87,7 @@ icon_web.addEventListener("click", () => {
 
 icon_ui.addEventListener("click", () => {
   resetClass();
+  icon_ui.classList.add("active");
   ui.classList.add("active");
   activeTab = ui;
   resetPage();
@@ -88,6 +95,7 @@ icon_ui.addEventListener("click", () => {
 
 icon_ani.addEventListener("click", () => {
   resetClass();
+  icon_ani.classList.add("active");
   ani.classList.add("active");
   activeTab = ani;
   resetPage();
@@ -95,6 +103,7 @@ icon_ani.addEventListener("click", () => {
 
 icon_con.addEventListener("click", () => {
   resetClass();
+  icon_con.classList.add("active");
   con.classList.add("active");
   activeTab = con;
   resetPage();

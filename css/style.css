@@ -198,7 +198,7 @@ aside {
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out;
+  transition: opacity 0.75s ease-in-out;
 }
 
 .carousel__slide.active {
@@ -442,15 +442,32 @@ footer p:last-child {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    /* gap: 0.5rem; */
   }
 
   #portfolio__nav li {
+    display: flex;
+    flex-direction: column;
     position: relative;
     cursor: pointer;
+    width: 70px;
+    height: 50px;
     font-size: 1.5rem;
     color: var(--accent-color);
+    padding: 0.5rem;
     transition: opacity 0.5s ease;
+  }
+
+  #portfolio__nav i {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+
+  #portfolio__nav li:has(.active) {
+    background-image: linear-gradient(to right, var(--secondary-color) 40%, transparent);
+    border-radius: 5px 0 0 5px;
+    transition: background-image 0.15s ease-in-out;
   }
 
   #portfolio__nav li:hover i {
@@ -459,6 +476,14 @@ footer p:last-child {
 
   #portfolio__nav li:hover .tooltip {
     display: block;
+  }
+
+  .fa-code.active,
+  .fa-pen-nib.active,
+  .fa-arrows-rotate.active,
+  .fa-folder-open.active {
+    scale: 1.2;
+    transition: 0.15s ease-in-out;
   }
 
   #socials {
