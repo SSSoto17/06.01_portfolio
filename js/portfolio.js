@@ -1,22 +1,28 @@
 // VARIABLES AND CONSTANTS
 
-const portfolio = document.querySelector("#portfolio_container");
-const prev = portfolio.querySelector(".carousel__button--prev");
-const next = portfolio.querySelector(".carousel__button--next");
+const prev = document.querySelector("#portfolio_container .carousel__button--prev");
+const next = document.querySelector("#portfolio_container .carousel__button--next");
 
-const icon_web = document.querySelector(".fa-code");
-const icon_ui = document.querySelector(".fa-pen-nib");
-const icon_ani = document.querySelector(".fa-arrows-rotate");
-const icon_con = document.querySelector(".fa-folder-open");
+const icon_web = document.querySelector("aside .fa-code");
+const icon_ui = document.querySelector("aside .fa-pen-nib");
+const icon_ani = document.querySelector("aside .fa-arrows-rotate");
+const icon_con = document.querySelector("aside .fa-folder-open");
 
-const web = document.querySelector(".web");
-const ui = document.querySelector(".ui");
-const ani = document.querySelector(".animation");
-const con = document.querySelector(".content");
+const dropdown_web = document.querySelector(".dropdown_web");
+const dropdown_ui = document.querySelector(".dropdown_ui");
+const dropdown_ani = document.querySelector(".dropdown_ani");
+const dropdown_con = document.querySelector(".dropdown_con");
+
+const web = document.querySelector("#web");
+const ui = document.querySelector("#ui");
+const ani = document.querySelector("#animation");
+const con = document.querySelector("#content");
 
 let activeTab;
 let pages;
 let currentPage;
+
+// functions
 
 function resetClass() {
   icon_web.classList.remove("active");
@@ -41,15 +47,56 @@ function resetPage() {
   }
 }
 
-// load in portfolio
+function gotoTab(...params) {
+  let page = params[0];
+  let icon = params[1];
+  resetClass();
+  icon.classList.add("active");
+  page.classList.add("active");
+  activeTab = page;
+  resetPage();
+  toggleBurger();
+}
+
+// load in portfolio;
 
 window.addEventListener("load", () => {
   resetClass();
-  icon_web.classList.add("active");
-  web.classList.add("active");
-  activeTab = web;
+  if (location.hash == "#ui") {
+    icon_ui.classList.add("active");
+    ui.classList.add("active");
+    activeTab = ui;
+  } else if (location.hash == "#animation") {
+    icon_ani.classList.add("active");
+    ani.classList.add("active");
+    activeTab = ani;
+  } else if (location.hash == "#content") {
+    icon_con.classList.add("active");
+    con.classList.add("active");
+    activeTab = con;
+  } else {
+    icon_web.classList.add("active");
+    web.classList.add("active");
+    activeTab = web;
+  }
   resetPage();
 });
+
+// aside navigation
+
+icon_web.addEventListener("click", gotoTab.bind(null, web, icon_web));
+icon_ui.addEventListener("click", gotoTab.bind(null, ui, icon_ui));
+icon_ani.addEventListener("click", gotoTab.bind(null, ani, icon_ani));
+icon_con.addEventListener("click", gotoTab.bind(null, con, icon_con));
+
+// mobile navigation
+
+dropdown_web.addEventListener("click", gotoTab.bind(null, web, icon_web));
+dropdown_ui.addEventListener("click", gotoTab.bind(null, ui, icon_ui));
+dropdown_ani.addEventListener("click", gotoTab.bind(null, ani, icon_ani));
+dropdown_con.addEventListener("click", gotoTab.bind(null, con, icon_con));
+
+// shift between pages
 
 next.addEventListener("click", () => {
   currentPage++;
@@ -63,9 +110,7 @@ next.addEventListener("click", () => {
 });
 
 prev.addEventListener("click", () => {
-  console.log(currentPage);
   currentPage--;
-  console.log(currentPage);
   if (currentPage >= 0) {
     next.classList.remove("inactive");
   }
@@ -73,38 +118,4 @@ prev.addEventListener("click", () => {
     prev.classList.add("inactive");
   }
   pages[currentPage].scrollIntoView();
-});
-
-// click on icons
-
-icon_web.addEventListener("click", () => {
-  resetClass();
-  icon_web.classList.add("active");
-  web.classList.add("active");
-  activeTab = web;
-  resetPage();
-});
-
-icon_ui.addEventListener("click", () => {
-  resetClass();
-  icon_ui.classList.add("active");
-  ui.classList.add("active");
-  activeTab = ui;
-  resetPage();
-});
-
-icon_ani.addEventListener("click", () => {
-  resetClass();
-  icon_ani.classList.add("active");
-  ani.classList.add("active");
-  activeTab = ani;
-  resetPage();
-});
-
-icon_con.addEventListener("click", () => {
-  resetClass();
-  icon_con.classList.add("active");
-  con.classList.add("active");
-  activeTab = con;
-  resetPage();
 });

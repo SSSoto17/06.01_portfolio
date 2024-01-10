@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World of Soto | About</title>
+    <title>World of Soto | Portfolio</title>
     <link rel="icon" type="image/x-icon" href="svg/chibimascot.svg">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/800px.css">
+    <link rel="stylesheet" href="css/1400px.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Abel&family=Crimson+Text:wght@400;600;700&family=Karla:wght@300;400;600;800&family=Lato:wght@300;400;700&family=Montserrat:wght@200;300;400;500;600&family=Open+Sans:wght@300;400;500;600;700&family=Oxygen:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Raleway:wght@200;300;400;500;600&display=swap');
     </style>
@@ -17,7 +20,8 @@
 
 <body>
     <header>
-        <nav>
+        <nav class="fill">
+            <a href="index.html" class="logo"></a>
             <ul class="nav__desktop">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -31,14 +35,24 @@
             <ul class="nav__mobile">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
+                <li class="portfolio__toggle">Portfolio</li>
             </ul>
-
+            <ul class="portfolio__dropdown">
+                <li class="dropdown_web"><a href="portfolio.html#web">Course #2 | <i class="fa-solid fa-code fa-fw"></i>
+                        Web</a></li>
+                <li class="dropdown_ui"><a href="portfolio.html#ui">Course #3 | <i
+                            class="fa-solid fa-pen-nib fa-fw"></i>
+                        UI/UX</a></li>
+                <li class="dropdown_ani"><a href="portfolio.html#animation">Course #4 | <i
+                            class="fa-solid fa-arrows-rotate fa-fw"></i> Animation</a></li>
+                <li class="dropdown_con"><a href="portfolio.html#content">Course #5 | <i
+                            class="fa-solid fa-folder-open fa-fw"></i> Content</a></li>
+            </ul>
         </nav>
     </header>
     <main>
         <aside>
-            <a href="index.html" id="logo"></a>
+            <a href="index.html" class="logo"></a>
             <div class="line"></div>
             <ul id="socials">
                 <li><a href="https://www.facebook.com/SSSoto17/"><i class="fa-brands fa-facebook fa-fw"></i></a>
@@ -57,16 +71,33 @@
         </aside>
         <div id="about_container">
             <div class="section__1">
+                <div id="about">
+                    <img src="img/portrait.webp" alt="Portrait of S. S. Soto" class="border_1">
+                    <img src="svg/chibimascot.svg" alt="My cat Chibi" class="mascot">
+                    <div id="contact" class="callout">
+                        <i class="fa-regular fa-envelope"></i>
+                        <ul>
+                            <li>
+                                <a href="mailto: sssoto@live.dk">sssoto@live.dk</a>
+                            </li>
+                            <li>
+                                <a href="mailto: saso0001@stud.kea.dk">saso0001@stud.kea.dk</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 <div>
-                    <h2>Hey there!</h2>
-                    <h3>My name is Soto, and I create websites <i class="fa-solid fa-pen-ruler"></i></h3>
-                    <p>Thank you for checking out my page. I am an undergraduate studying Multimedia Design at
-                        Copenhagen School of Design and Technology—better known by its acronym KEA—and this is a
-                        portfolio of my work over the first semester.</p>
-                    <p>I chose this program because I have a passion for design and an addiction to problem solving,
-                        which to me is what coding is all about. I enjoy experimenting with visual aesthetics while
-                        pushing the boundaries of what html and css can do. In the future I hope to do web design
-                        professionally, and perhaps even go into the video games industry.</p>
+                    <div>
+                        <h2>Hey there!</h2>
+                        <h3>My name is Soto, and I create websites <i class="fa-solid fa-pen-ruler"></i></h3>
+                        <p>Thank you for checking out my page. I am an undergraduate studying Multimedia Design at
+                            Copenhagen School of Design and Technology—better known by its acronym KEA—and this is a
+                            portfolio of my work over the first semester.</p>
+                        <p>I chose this program because I have a passion for design and an addiction to problem solving,
+                            which to me is what coding is all about. I enjoy experimenting with visual aesthetics while
+                            pushing the boundaries of what html and css can do. In the future I hope to do web design
+                            professionally, and perhaps even go into the video games industry.</p>
+                    </div>
                     <ul id="education">
                         <li>
                             <i class="fa-solid fa-graduation-cap"></i>
@@ -91,33 +122,20 @@
                         </li>
                     </ul>
                 </div>
-                <div id="about">
-                    <img src="img/portrait.webp" alt="Portrait of S. S. Soto" class="border_1">
-                    <img src="svg/chibimascot.svg" alt="My cat Chibi" class="mascot">
-                    <div id="contact" class="callout">
-                        <i class="fa-regular fa-envelope"></i>
-                        <ul>
-                            <li>
-                                <a href="mailto: sssoto@live.dk">sssoto@live.dk</a>
-                            </li>
-                            <li>
-                                <a href="mailto: saso0001@stud.kea.dk">saso0001@stud.kea.dk</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
             <div class="section__2 separator">
-                <h2>Logician by mind</h2>
-                <h3>Creative by Heart</h3>
-                <p>I enjoy coding because I have a weakness for logical systems; but my true passion is
-                    art—in all its various forms!</p>
-                <p>In my freetime I enjoy digital art, crafts such as knitting and crochet, and music production. I
-                    also am a bit of a geek and love to relax with movies, video games, jigsaw puzzles, or a
-                    good book. My passion project is an epic fantasy book series I have been developing over the
-                    past few years.</p>
-                <p>The love of my life is my little black cat named Chibi. She's been with me over a decade, and
-                    is my personal mascot here on the page—say hello!</p>
+                <div>
+                    <h2>Logician by mind</h2>
+                    <h3>Creative by Heart</h3>
+                    <p>I enjoy coding because I have a weakness for logical systems; but my true passion is
+                        art—in all its various forms!</p>
+                    <p>In my freetime I enjoy digital art, crafts such as knitting and crochet, and music production. I
+                        also am a bit of a geek and love to relax with movies, video games, jigsaw puzzles, or a
+                        good book. My passion project is an epic fantasy book series I have been developing over the
+                        past few years.</p>
+                    <p>The love of my life is my little black cat named Chibi. She's been with me over a decade, and
+                        is my personal mascot here on the page—say hello!</p>
+                </div>
                 <div id="skills" class="callout">
                     <h2>Skills</h2>
                     <ul>
@@ -133,6 +151,12 @@
         </div>
     </main>
     <footer>
+        <ul id="mobile__socials">
+            <li><a href="https://www.facebook.com/SSSoto17/"><i class="fa-brands fa-facebook fa-fw"></i></a> </li>
+            <li><a href="https://www.youtube.com/@SSSoto17"><i class="fa-brands fa-youtube fa-fw"></i></a> </li>
+            <li><a href="https://www.instagram.com/sssoto17/"><i class="fa-brands fa-instagram fa-fw"></i></a> </li>
+            <li><a href="https://twitter.com/sssoto1"><i class="fa-brands fa-twitter fa-fw"></i></a> </li>
+        </ul>
         <p>© S. S. Soto</p>
     </footer>
     <script src="js/nav.js"></script>

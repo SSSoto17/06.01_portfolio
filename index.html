@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World of Soto</title>
+    <title>World of Soto | Portfolio</title>
     <link rel="icon" type="image/x-icon" href="svg/chibimascot.svg">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/800px.css">
+    <link rel="stylesheet" href="css/1400px.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Abel&family=Crimson+Text:wght@400;600;700&family=Karla:wght@300;400;600;800&family=Lato:wght@300;400;700&family=Montserrat:wght@200;300;400;500;600&family=Open+Sans:wght@300;400;500;600;700&family=Oxygen:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Raleway:wght@200;300;400;500;600&display=swap');
     </style>
@@ -18,6 +21,7 @@
 <body>
     <header>
         <nav>
+            <a href="index.html" class="logo"></a>
             <ul class="nav__desktop">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -31,13 +35,24 @@
             <ul class="nav__mobile">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
+                <li class="portfolio__toggle">Portfolio</li>
+            </ul>
+            <ul class="portfolio__dropdown">
+                <li class="dropdown_web"><a href="portfolio.html#web">Course #2 | <i class="fa-solid fa-code fa-fw"></i>
+                        Web</a></li>
+                <li class="dropdown_ui"><a href="portfolio.html#ui">Course #3 | <i
+                            class="fa-solid fa-pen-nib fa-fw"></i>
+                        UI/UX</a></li>
+                <li class="dropdown_ani"><a href="portfolio.html#animation">Course #4 | <i
+                            class="fa-solid fa-arrows-rotate fa-fw"></i> Animation</a></li>
+                <li class="dropdown_con"><a href="portfolio.html#content">Course #5 | <i
+                            class="fa-solid fa-folder-open fa-fw"></i> Content</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <aside>
-            <a href="index.html" id="logo"></a>
+            <a href="index.html" class="logo"></a>
             <div class="line"></div>
             <ul id="socials">
                 <li><a href="https://www.facebook.com/SSSoto17/"><i class="fa-brands fa-facebook fa-fw"></i></a>

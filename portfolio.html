@@ -8,7 +8,10 @@
     <link rel="icon" type="image/x-icon" href="svg/chibimascot.svg">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/800px.css">
+    <link rel="stylesheet" href="css/1400px.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Abel&family=Crimson+Text:wght@400;600;700&family=Karla:wght@300;400;600;800&family=Lato:wght@300;400;700&family=Montserrat:wght@200;300;400;500;600&family=Open+Sans:wght@300;400;500;600;700&family=Oxygen:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Raleway:wght@200;300;400;500;600&display=swap');
     </style>
@@ -17,7 +20,8 @@
 
 <body>
     <header>
-        <nav>
+        <nav class="fill">
+            <a href="index.html" class="logo"></a>
             <ul class="nav__desktop">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -31,14 +35,24 @@
             <ul class="nav__mobile">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
+                <li class="portfolio__toggle">Portfolio</li>
             </ul>
-
+            <ul class="portfolio__dropdown">
+                <li class="dropdown_web"><a href="portfolio.html#web">Course #2 | <i class="fa-solid fa-code fa-fw"></i>
+                        Web</a></li>
+                <li class="dropdown_ui"><a href="portfolio.html#ui">Course #3 | <i
+                            class="fa-solid fa-pen-nib fa-fw"></i>
+                        UI/UX</a></li>
+                <li class="dropdown_ani"><a href="portfolio.html#animation">Course #4 | <i
+                            class="fa-solid fa-arrows-rotate fa-fw"></i> Animation</a></li>
+                <li class="dropdown_con"><a href="portfolio.html#content">Course #5 | <i
+                            class="fa-solid fa-folder-open fa-fw"></i> Content</a></li>
+            </ul>
         </nav>
     </header>
     <main>
         <aside>
-            <a href="index.html" id="logo"></a>
+            <a href="index.html" class="logo"></a>
             <div class="portfolio__line"></div>
             <ul id="portfolio__nav">
                 <li><i class="fa-solid fa-code fa-fw active"></i>
@@ -71,13 +85,12 @@
             </ul>
         </aside>
         <div id="portfolio_container">
-
-            <section class="web">
+            <section id="web">
                 <ul class="flex_pages">
                     <li>
                         <img src="img/02_web/web_01.webp" alt="Frontpage of final website" class="img_1 border_1">
-                        <div class="img_2"></div>
-                        <img src="img/02_web/web_02.webp" alt="Snippet of HTML and CSS code" class="img_2 border_2">
+                        <img src="img/02_web/web_02.webp" alt="Snippet of HTML and CSS code"
+                            class="img_2 border_2 mobile_hide">
                         <div class="section__1">
                             <div>
                                 <h1>Web</h1>
@@ -92,14 +105,10 @@
                             <a href="http://worldofsoto.dk/kea/02_web/01_website/website/" class="btn">Go to
                                 site <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
-
                     </li>
                     <li>
-                        <div class="img_1"></div>
                         <img src="img/02_web/web_03.webp" alt="An exercise in html featuring my cat Chibi"
                             class="img_1 border_2">
-                        <img src="img/02_web/web_04.webp" alt="Layout diagram of the frontpage" class="img_2 border_2">
-                        <img src="img/02_web/web_05.webp" alt="An exercise in CSS grid" class="img_3 border_2">
                         <div class="section__1">
                             <h3>HTML & CSS</h3>
                             <p>The programming languages we worked with during this course were html and css. We started
@@ -114,23 +123,26 @@
                                 guidelines and included the content provided for the assignment.</p>
                         </div>
                         <div class="section__2 separator">
-                            <h3>Layout diagrams</h3>
-                            <p>To enhance our understanding of how the html hierarchy worked, we were taught about
-                                layout diagrams, which were also provided to us as a guideline for setting up the html
-                                structure for our assignment. The layout diagram simply shows the box-within-a-box
-                                structure that html functions by.</p>
-                            <h3>CSS Grid</h3>
-                            <p>To set up our webpage layout we were taught the basics of css grid, with exercises to
-                                train our understanding and learn how to place objects on a page.</p>
+                            <img src="img/02_web/web_04.webp" alt="Layout diagram of the frontpage"
+                                class="img_2 border_2">
+                            <div>
+                                <h3>Layout diagrams</h3>
+                                <p>To enhance our understanding of how the html hierarchy worked, we were taught about
+                                    layout diagrams, which were also provided to us as a guideline for setting up the
+                                    html
+                                    structure for our assignment. The layout diagram simply shows the box-within-a-box
+                                    structure that html functions by.</p>
+                            </div>
+                            <img src="img/02_web/web_05.webp" alt="An exercise in CSS grid" class="img_3 border_2">
+                            <div>
+                                <h3>CSS Grid</h3>
+                                <p>To set up our webpage layout we were taught the basics of css grid, with exercises to
+                                    train our understanding and learn how to place objects on a page.</p>
+                            </div>
                         </div>
                     </li>
                     <li>
                         <img src="img/02_web/web_09.webp" alt="Screenshot of final website" class="img_1 border_1">
-                        <div class="section__1">
-                            <img src="img/02_web/web_06.webp" alt="Screenshot of final website" class="img_2 border_2">
-                            <img src="img/02_web/web_07.webp" alt="Screenshot of final website" class="img_3 border_2">
-                            <img src="img/02_web/web_08.webp" alt="Screenshot of final website" class="img_4 border_2">
-                        </div>
                         <div class="section__2">
                             <h3>Final Thoughts</h3>
                             <p>In the end I finished up my page fast, as I quickly got the hang of it once I dusted off
@@ -139,13 +151,18 @@
                                 errors, which was a great personal learning experience. As far as my first real
                                 website goes, I was happy with the final result.</p>
                         </div>
+                        <div class="section__1">
+                            <img src="img/02_web/web_06.webp" alt="Screenshot of final website" class="img_2 border_2">
+                            <img src="img/02_web/web_07.webp" alt="Screenshot of final website" class="img_3 border_2">
+                            <img src="img/02_web/web_08.webp" alt="Screenshot of final website" class="img_4 border_2">
+                        </div>
                     </li>
                 </ul>
             </section>
-            <section class="ui">
+            <section id="ui">
                 <ul class="flex_pages">
                     <li>
-                        <img src="img/03_ui/ui_01.webp" alt="Frontpage" class="img_1 border_2">
+                        <img src="img/03_ui/ui_01.webp" alt="Frontpage" class="img_1 border_2 mobile_hide">
                         <img src="img/03_ui/ui_01.webp" alt="Frontpage" class="img_2 border_2">
                         <div class="section__1">
                             <div>
@@ -166,7 +183,7 @@
                     </li>
                     <li>
                         <img src="img/03_ui/ui_02.webp" alt="Research and user stories" class="img_1 border_2">
-                        <img src="img/03_ui/ui_03.webp" alt="Moodboard" class="img_2 border_2">
+                        <img src="img/03_ui/ui_03.webp" alt="Moodboard" class="img_2 border_2 mobile_hide">
                         <img src="img/03_ui/ui_04.webp" alt="Moodboard" class="img_3 border_2">
                         <div class="section__1">
                             <h3>Development & Research</h3>
@@ -186,13 +203,10 @@
                                 good design based on a collection of observations on human visual perception. These
                                 include things like closure, proximity, continuation, and symmetry.</p>
                         </div>
-
                     </li>
                     <li>
-                        <img src="img/03_ui/ui_05.webp" alt="Styletile" class="img_1 border_2">
+                        <img src="img/03_ui/ui_05.webp" alt="Styletile" class="img_1 border_2 mobile_hide">
                         <img src="img/03_ui/ui_05.webp" alt="Styletile" class="img_2 border_2">
-                        <img src="img/03_ui/ui_06.webp" alt="Lo-Fi wireframe" class="img_3 border_2">
-                        <img src="img/03_ui/ui_07.webp" alt="Hi-Fi wireframe" class="img_4 border_2">
                         <div class="section__1">
                             <h3>Styletile</h3>
                             <p>This course was our first introduction to Figma, which we used to create styletile and
@@ -201,6 +215,8 @@
                                 I collected fonts, colour
                                 palettes, and images with my chosen design keywords in mind.</p>
                         </div>
+                        <img src="img/03_ui/ui_06.webp" alt="Lo-Fi wireframe" class="img_3 border_2">
+                        <img src="img/03_ui/ui_07.webp" alt="Hi-Fi wireframe" class="img_4 border_2">
                         <div class="section__2 separator">
                             <h3>Lo-Fi & Hi-Fi</h3>
                             <p>The last step in the design process before coding was to create wireframes and
@@ -212,33 +228,41 @@
                                 pages in my site. In the end I could pick out the designs I liked most and create a
                                 finalised layout based on a combination of ideas.</p>
                         </div>
-
                     </li>
                     <li>
                         <img src="img/03_ui/ui_08.webp" alt="UX test" class="img_1 border_1">
-                        <img src="img/03_ui/ui_09.webp" alt="Browse page" class="img_2 border_1">
                         <div class="section__1">
-                            <h3>UX Testing</h3>
-                            <p>Then we moved on to the user tests, which would determine if we had achieved what we had
-                                set out to accomplish with our
-                                page. Several different testing methods were introduced to us, and I used two; the 5
-                                second test and the think-aloud
-                                test.</p>
-                            <p>I tested first on three different individuals, one of whom was not my target audience,
-                                and mostly my results were
-                                positive as they all described the page as clean and minimalistic, which was my
-                                intention. The feedback I received for
-                                aspects of improvements were all notes I had made to myself as well, which told me that
-                                my intuition about the site was
-                                correct.</p>
-                            <h3>Final Thoughts</h3>
-                            <p>I must admit, I struggled a bit with this course as I found many of the exercises
-                                repetitive, and I've found that I
-                                prefer designing during the coding process rather than sketching out plans beforehand.
-                                But I learned many techniques and methods for developing a design that keeps in mind the
-                                end user, and that is valuable. I have a more varied arsenal of tools now, and am
-                                equipped to design for future potential clients.</p>
+                            <div>
+                                <h3>UX Testing</h3>
+                                <p>Then we moved on to the user tests, which would determine if we had achieved what we
+                                    had
+                                    set out to accomplish with our
+                                    page. Several different testing methods were introduced to us, and I used two; the 5
+                                    second test and the think-aloud
+                                    test.</p>
+                                <p>I tested first on three different individuals, one of whom was not my target
+                                    audience,
+                                    and mostly my results were
+                                    positive as they all described the page as clean and minimalistic, which was my
+                                    intention. The feedback I received for
+                                    aspects of improvements were all notes I had made to myself as well, which told me
+                                    that
+                                    my intuition about the site was
+                                    correct.</p>
+                            </div>
+                            <div>
+                                <h3>Final Thoughts</h3>
+                                <p>I must admit, I struggled a bit with this course as I found many of the exercises
+                                    repetitive, and I've found that I
+                                    prefer designing during the coding process rather than sketching out plans
+                                    beforehand.
+                                    But I learned many techniques and methods for developing a design that keeps in mind
+                                    the
+                                    end user, and that is valuable. I have a more varied arsenal of tools now, and am
+                                    equipped to design for future potential clients.</p>
+                            </div>
                         </div>
+                        <img src="img/03_ui/ui_09.webp" alt="Browse page" class="img_2 border_1">
                         <div class="callout">
                             <p>Unfortunately I was not feeling well towards the end of this course, and so I didn't
                                 prepare
@@ -249,7 +273,7 @@
                     </li>
                 </ul>
             </section>
-            <section class="animation">
+            <section id="animation">
                 <ul class="flex_pages">
                     <li>
                         <div id="ani_showcase">
@@ -266,8 +290,6 @@
                                 personally had great enjoyment designing the game mechanics, graphics, and final
                                 website.</p>
                         </div>
-                        <a href="https://worldofsoto.dk/kea/04_animation/website/" class="btn">Go to site <i
-                                class="fa-solid fa-arrow-right"></i></a>
                         <div class="section__2">
                             <img src="img/04_ani/ani_01.webp" alt="Frontpage" class="img_1 border_1">
                             <div>
@@ -285,6 +307,8 @@
                                 </p>
                             </div>
                         </div>
+                        <a href="https://worldofsoto.dk/kea/04_animation/website/" class="btn">Go to site <i
+                                class="fa-solid fa-arrow-right"></i></a>
                     </li>
                     <li>
                         <img src="img/04_ani/ani_02.webp" alt="Game concept" class="img_1 border_2">
@@ -297,6 +321,9 @@
                                 mixing different win and lose conditions to make each game session fresh.</p>
                         </div>
                         <div class="section__2">
+                            <img src="img/04_ani/ani_03.webp" alt="Rough sketch" class="img_2 border_2">
+                            <img src="img/04_ani/ani_04.webp" alt="Ckean sketch" class="img_3 border_2">
+                            <img src="img/04_ani/ani_05.webp" alt="Final graphic" class="img_4 border_2">
                             <div>
                                 <h3>Graphics</h3>
                                 <p>Thus I set to work on the graphics. I sketched out my character and game elements in
@@ -304,16 +331,10 @@
                                     sketched traditionally, with pen on paper. I then transferred the sketches to
                                     Illustrator and began bringing my characters to life.</p>
                             </div>
-                            <img src="img/04_ani/ani_03.webp" alt="Rough sketch" class="img_2 border_2">
-                            <img src="img/04_ani/ani_04.webp" alt="Ckean sketch" class="img_3 border_2">
-                            <img src="img/04_ani/ani_05.webp" alt="Final graphic" class="img_4 border_2">
                         </div>
-
                     </li>
                     <li>
-                        <div class="img_1"></div>
                         <img src="img/04_ani/ani_06.webp" alt="Javascript" class="img_1 border_2">
-                        <div class="img_2"></div>
                         <img src="img/04_ani/ani_07.webp" alt="State machine diagram" class="img_2 border_2">
                         <div class="section__1">
                             <h3>Code</h3>
@@ -328,21 +349,25 @@
                                 perspective and for how the javascript would function in the backend.</p>
                         </div>
                         <div class="section__2 separator">
-                            <img src="img/04_ani/ani_08.drawio.webp" alt="UML diagram exercise" class="img_1 border_1">
+                            <img src="img/04_ani/ani_08.drawio.webp" alt="UML diagram exercise"
+                                class="img_1 border_1 mobile_hide">
                             <img src="img/04_ani/ani_09.webp" alt="" class="img_2 border_1">
-                            <h3>Extra activities</h3>
-                            <p>Besides our main project—the game—we also received small exercises, which would serve as
-                                practise
-                                for
-                                the components of javascript we were meant to incorporate in our larger assignment.
-                                These
-                                involved
-                                exercises in javascript and creating UML and SM diagrams.</p>
+                            <div>
+                                <h3>Extra activities</h3>
+                                <p>Besides our main project—the game—we also received small exercises, which would serve
+                                    as
+                                    practise
+                                    for
+                                    the components of javascript we were meant to incorporate in our larger assignment.
+                                    These
+                                    involved
+                                    exercises in javascript and creating UML and SM diagrams.</p>
+                            </div>
                         </div>
                     </li>
                 </ul>
             </section>
-            <section class="content">
+            <section id="content">
                 <ul class="flex_pages">
                     <li>
                         <img src="img/05_con/con_01.webp" alt="Frontpage" class="img_1 border_1">
@@ -365,7 +390,8 @@
                         <img src="img/05_con/con_02.webp" alt="Video site" class="img_1 border_2">
                         <div class="section__1">
                             <h3>Passion for Dance | A Video Project</h3>
-                            <p>The first week of this course was focused on exercising the skill of going out into the
+                            <p>The first week of this course was focused on exercising the skill of going out into
+                                the
                                 field to gather content, and we
                                 were tasked with interviewing and shooting a video of a person with a passion. We
                                 learned about different technical
@@ -375,9 +401,11 @@
                                 to interview. My partner knew a
                                 dancer who led a kpop dance group in the city, and we went to talk to him. He was an
                                 energetic personality and provided
-                                good takes for our respective videos--and the interview was quick as well, which made
+                                good takes for our respective videos--and the interview was quick as well, which
+                                made
                                 the later editing stage much easier.</p>
-                            <p>This was also our first foray into github, which we would come to use a lot in the next
+                            <p>This was also our first foray into github, which we would come to use a lot in the
+                                next
                                 assignment.</p>
                             <a href="https://sssoto17.github.io/videosite/" class="btn">Go to
                                 site <i class="fa-solid fa-arrow-right"></i></a>
@@ -416,6 +444,7 @@
                                 him a breeze.</p>
                         </div>
                         <div class="section__2 separator">
+                            <img src="img/05_con/con_04.webp" alt="Research on our client" class="img_1 border_1">
                             <h3>Research & Design</h3>
                             <p>This course was about content, but every step of what we had been taught on previous
                                 courses was incorporated with the aim to create a final product for a real client.</p>
@@ -428,13 +457,12 @@
                                 members involved; we created a Figjam board to collect our ideas, and drew up wireframes
                                 in Figma together. We also created a rough sitemap and user stories based on the data we
                                 had collected through our interview with the client.</p>
-                            <img src="img/05_con/con_04.webp" alt="Research on our client" class="img_1 border_1">
                         </div>
                     </li>
                     <li>
-                        <img src="img/05_con/con_07.webp" alt="Coding in html and css" class="img_3 border_1">
-                        <img src="img/05_con/con_08.webp" alt="Coding shared through github" class="img_4 border_2">
                         <div class="section__1">
+                            <img src="img/05_con/con_05.webp" alt="Photoshoot in studio at KEA" class="img_1 border_2">
+                            <img src="img/05_con/con_06.webp" alt="Observing the client at work" class="img_2 border_2">
                             <div>
                                 <h3>Collection of Content</h3>
                                 <p>Now was the time to make use of what we learned in the first week of the course. The
@@ -448,9 +476,9 @@
                                     to
                                     put on our site.</p>
                             </div>
-                            <img src="img/05_con/con_05.webp" alt="Photoshoot in studio at KEA" class="img_1 border_2">
-                            <img src="img/05_con/con_06.webp" alt="Observing the client at work" class="img_2 border_2">
                         </div>
+                        <img src="img/05_con/con_07.webp" alt="Coding in html and css" class="img_3 border_1">
+                        <img src="img/05_con/con_08.webp" alt="Coding shared through github" class="img_4 border_2">
                         <div class="section__2">
                             <h3>Collaborative Coding</h3>
                             <p>Another of my teammates and I were the ones primarily coding the website, whilst the
@@ -468,8 +496,6 @@
                     </li>
                     <li>
                         <img src="img/05_con/con_09.webp" alt="UX test" class="img_1 border_2">
-                        <img src="img/05_con/con_10.webp" alt="Screenshot of final website" class="img_2 border_1">
-                        <img src="img/05_con/con_11.webp" alt="Presentation PowerPoint" class="img_3 border_2">
                         <div class="section__1">
                             <h3>UX Testing</h3>
                             <p>We did tests of the client's current site and our redesign, primarily using the BERT
@@ -478,6 +504,7 @@
                                 outdated. After our redesign, we were pleased to see that we hit our target keywords.
                             </p>
                         </div>
+                        <img src="img/05_con/con_11.webp" alt="Presentation PowerPoint" class="img_3 border_2">
                         <div class="section__2 separator">
                             <h3>Presentation</h3>
                             <p>Finally, we made a powerpoint for our pitch and delegated topics amongst each other. In
@@ -485,6 +512,7 @@
                                 talking too long which we received feedback on. We might have been more efficient in our
                                 presentation if we had practised our talking points more beforehand.</p>
                         </div>
+                        <img src="img/05_con/con_10.webp" alt="Screenshot of final website" class="img_2 border_1">
                         <div class="callout">
                             <h2>The Collaborative Experience</h2>
                             <p>I am very thankful for my group, as they made this a smooth and enjoyable
@@ -505,10 +533,17 @@
         </div>
     </main>
     <footer>
+        <ul id="mobile__socials">
+            <li><a href="https://www.facebook.com/SSSoto17/"><i class="fa-brands fa-facebook fa-fw"></i></a> </li>
+            <li><a href="https://www.youtube.com/@SSSoto17"><i class="fa-brands fa-youtube fa-fw"></i></a> </li>
+            <li><a href="https://www.instagram.com/sssoto17/"><i class="fa-brands fa-instagram fa-fw"></i></a> </li>
+            <li><a href="https://twitter.com/sssoto1"><i class="fa-brands fa-twitter fa-fw"></i></a> </li>
+        </ul>
         <p>© S. S. Soto</p>
     </footer>
     <script src="js/nav.js"></script>
     <script src="js/portfolio.js"></script>
+
 </body>
 
 </html>
